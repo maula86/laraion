@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-row>
+  <ion-col>
+    <ion-title color="primary" class="mtp">Login</ion-title>
+  </ion-col>
+  <ion-col>
+    <ion-button class="jok"  fill="clear" (click)="kembali()">
+    <ion-icon color="danger" size="large" name="close-circle"></ion-icon>
+    </ion-button>
+  </ion-col>  
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<!-- input Form -->
+    <form #form="ngForm" (ngSubmit)="login(form)" method="POST">
+      <!-- input User -->
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="email" class="ion-margin" name="email" ngModel></ion-input>
+      </ion-item>
+      <!-- Input Pass -->
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" class="ion-margin" name="password" ngModel></ion-input>
+      </ion-item>
+
+      <div class="ion-text-end">
+      <ion-button fill="clear"> <br>
+          <ion-label color="dark">Lupa Password?</ion-label>
+      </ion-button>
+      </div>
+
+      <ion-row>
+          <ion-col>
+              <ion-button type="submit" expand="block" color="primary">Login</ion-button>
+          </ion-col>
+      </ion-row>
+
+    </form>
+    
+      <ion-row>
+        <ion-col>
+            <div class="ion-text-center">
+              <ion-label color="dark">Anda Belum Memiliki Account ?</ion-label>
+            </div>
+          <ion-button (click)="register()" expand="block" color="tertiary">Daftar</ion-button>
+          <ion-button (click)="kembali()" expand="block" color="danger">Kembali</ion-button>
+        </ion-col>
+      </ion-row>
+
+</ion-content>
+
+<!--<ion-footer class="ion-no-border">
+  <ion-toolbar>
+   
+  </ion-toolbar>
+</ion-footer>-->

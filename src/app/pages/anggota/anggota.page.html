@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Anggota
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--rajeh -->
+  <ion-card>
+  <!--card -->
+    <ion-card-header>
+      <ion-card-subtitle>
+         <ion-button color="success">Add Data
+        </ion-button>
+      </ion-card-subtitle>
+      <ion-card-title>
+        <!-- Searchbar with a custom debounce -->
+        <ion-searchbar debounce="500"></ion-searchbar>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     <!--CC -->
+        <ion-row style="border-bottom: groove;">
+            <ion-col class="col">
+              <ion-label >No.</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >Id</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >Nama</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >Alamat</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >HP</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >Kondisi</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >Status</ion-label>
+            </ion-col>
+        </ion-row>
+
+        <!--////////////////////////////////////////////-->
+        <ion-row *ngFor="let item of dtanggota">
+            <ion-col class="col">
+              <ion-label >{{item.id}}</ion-label>
+            </ion-col>
+             <!--<ion-col class="col">-->
+               <!--<<a routerLink="bookedit/:id"></a>
+             <a [routerLink]="['/bookedit',item.id]"></a>
+             <ion-button (click)="edit(item.id)" fill="solid" class="roun tembak" color="primary">
+              <ion-icon name="create"></ion-icon>
+             </ion-button>
+
+              <ion-button (click)="hapus(item.id)" fill="solid" class="roun" color="danger">
+              <ion-icon name="trash"></ion-icon>
+             </ion-button>
+
+            </ion-col>
+                -->
+            <ion-col class="col">
+              <ion-label >{{ item.kd_agt }}</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >{{item.nm_agt}}</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >{{item.alamat_agt}}</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >{{item.hp}}</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >{{item.kondisi}}</ion-label>
+            </ion-col>
+            <ion-col class="col">
+              <ion-label >{{item.sts_agt}}</ion-label>
+            </ion-col>
+        </ion-row>
+     <!--CC -->
+    </ion-card-content>
+  <!--card -->
+  </ion-card>
+<!--rajeh -->
+</ion-content>

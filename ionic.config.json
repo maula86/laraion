@@ -1,5 +1,7 @@
 {
   "name": "ppob_sidemenu",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

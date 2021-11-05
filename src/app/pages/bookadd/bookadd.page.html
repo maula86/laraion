@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-row>
+  <ion-col>
+    <ion-title class="mtp">Add Buku</ion-title>
+  </ion-col>
+  <ion-col>
+    <ion-button class="jok"  fill="clear" (click)="kembali()">
+    <ion-icon color="danger" size="large" name="close-circle"></ion-icon>
+    </ion-button>
+  </ion-col>  
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form #form="ngForm" method="POST" (ngSubmit)="simpanbuku(form)">
+    <ion-item>
+      <ion-label position="floating">Kode Buku</ion-label>
+      <ion-input type="text" name="kode_b" ngModel  class="ion-margin"></ion-input>
+    </ion-item>
+    <!-- Input Email --> 
+    <ion-item>
+      <ion-label position="floating">Judul</ion-label>
+      <ion-input type="text" name="judul" ngModel class="ion-margin"></ion-input>
+    </ion-item>
+    <!-- Input Pass -->
+    <ion-item>
+      <ion-label position="floating">Penerbit</ion-label>
+      <ion-input type="text" name="penerbit" ngModel class="ion-margin"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Pengarang</ion-label>
+      <ion-input type="text" name="pengarang" ngModel  class="ion-margin"></ion-input>
+    </ion-item>
+    <!-- Input Email --> 
+    <ion-item>
+      <ion-label position="floating">Rak</ion-label>
+      <ion-input type="text" name="rak" ngModel class="ion-margin"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Jumlah</ion-label>
+      <ion-input type="number" name="jml" ngModel  class="ion-margin"></ion-input>
+    </ion-item>
+    <!-- Input Email --> 
+    <ion-item>
+      <ion-label position="floating">Harga Satuan</ion-label>
+      <ion-input type="number" name="price" ngModel class="ion-margin"></ion-input>
+    </ion-item>
+    <!--<ion-item>
+      <ion-label position="floating">Harga Satuan</ion-label>
+      <ion-input type="text" name="email" ngModel class="ion-margin"></ion-input>
+    </ion-item>-->
+
+    <ion-row>
+      <ion-col>
+          <ion-button type="submit" expand="block" color="tertiary">Simpan</ion-button>
+        </ion-col>
+
+      <ion-col>
+        <ion-button expand="block" color="danger">Batal</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>    
+
+
+
+
+</ion-content>

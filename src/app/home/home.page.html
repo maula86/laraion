@@ -1,4 +1,5 @@
 <ion-header>
+  <meta name="color-scheme" content="light dark" />
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -9,22 +10,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card class="welcome-card">
-    <img src="/assets/shapes.svg" alt=""/>
-    <ion-card-header>
-      <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>
-        Now that your app has been created, you'll want to start building out features
-        and components. Check out some of the resources below for next steps.
+<ion-content class="ion-padding">
+  <ion-card>
+  <ion-card-header>
+    <!-- <div class="circle">
+      <!-- <img src="/assets/user.png" alt=""/>
+    </div> -->
+  </ion-card-header>
+    <ion-card-content class="ion-text-center">
+    <ion-card-subtitle>Selamat Datang </ion-card-subtitle>
+      <ion-card-subtitle>Di Sinau </ion-card-subtitle>
+      <ion-text color="primary" *ngIf="dtuser != undefined">{{dtuser.name}}</ion-text>
+      <ion-card-subtitle color="danger" *ngIf="dtuser != undefined">{{dtuser.email}}</ion-card-subtitle>
+      <p *ngIf="dtuser != undefined">
+       Menjadi Member Sejak : <br>
+       <ion-text color="tertiary">{{dtuser.created_at | date: 'dd MMMM yyyy' }}</ion-text>
       </p>
+      <ion-button expand="small" color="tertiary">Upload Your Profile</ion-button>
+      <ion-list>
+
+        <!-- <ion-item-sliding *ngFor="let f of files">
+          <ion-item (click)="openFile(f)">
+            <ion-icon name="image" slot="start" *ngIf="f.name.endsWith('jpg')"></ion-icon>
+            <ion-icon name="videocam" slot="start" *ngIf="f.name.endsWith('MOV') || f.name.endsWith('mp4')"></ion-icon>
+            <ion-icon name="mic" slot="start" *ngIf="f.name.endsWith('wav')"></ion-icon>
+     
+            <ion-label class="ion-text-wrap">
+              {{ f.name }}
+              <p>{{ f.fullPath }}</p>
+            </ion-label>
+          </ion-item>
+     
+          <ion-item-options side="start">
+            <ion-item-option (click)="deleteFile(f)" color="danger">
+              <ion-icon name="trash" slot="icon-only"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+     
+        </ion-item-sliding> -->
+
+      </ion-list>
     </ion-card-content>
   </ion-card>
+  <!-- <ion-footer>
+    <ion-toolbar color="primary">
+      <ion-button fill="clear" expand="full" color="light" (click)="selectMedia()">
+        <ion-icon slot="start" name="document"></ion-icon>
+        Select Media
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer> -->
 
-  <ion-list lines="none">
+  <!--<ion-list lines="none">
     <ion-list-header>
       <ion-label>Resources</ion-label>
     </ion-list-header>
@@ -44,5 +81,5 @@
       <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
       <ion-label>Theme Your App</ion-label>
     </ion-item>
-  </ion-list>
+  </ion-list>-->
 </ion-content>
